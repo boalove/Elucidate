@@ -1,0 +1,6 @@
+framework module TesseractOCRMac {
+  umbrella header "TesseractOCRMac.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,360 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4A35DD3D1A75E5F100059B4C /* DropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A35DD3C1A75E5F100059B4C /* DropView.swift */; };
+		4A35DD461A761C7D00059B4C /* TesseractOCRMac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A35DD451A761C7D00059B4C /* TesseractOCRMac.framework */; };
+		4A35DD471A761C8400059B4C /* TesseractOCRMac.framework in Include Private Frameworks */ = {isa = PBXBuildFile; fileRef = 4A35DD451A761C7D00059B4C /* TesseractOCRMac.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4A4205691A7ED5A80009B7D8 /* ElucidatePDFManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4205681A7ED5A80009B7D8 /* ElucidatePDFManager.swift */; };
+		4A46CF9F1A887D2B00E0BDF2 /* Elucidate.icns in Resources */ = {isa = PBXBuildFile; fileRef = 4A46CF9E1A887D2B00E0BDF2 /* Elucidate.icns */; };
+		4A51B4FB1A745407002A6D16 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A51B4FA1A745407002A6D16 /* AppDelegate.swift */; };
+		4A661ADE1A742E1B0022CC69 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A661ADD1A742E1B0022CC69 /* ViewController.swift */; };
+		4A661AE01A742E1B0022CC69 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A661ADF1A742E1B0022CC69 /* Images.xcassets */; };
+		4A661AE31A742E1C0022CC69 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A661AE11A742E1C0022CC69 /* Main.storyboard */; };
+		4A661AFB1A742E4C0022CC69 /* libstdc++.6.0.9.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A661AFA1A742E4C0022CC69 /* libstdc++.6.0.9.dylib */; };
+		4A661AFD1A742E540022CC69 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A661AFC1A742E540022CC69 /* QuartzCore.framework */; };
+		4A661B0C1A7433B40022CC69 /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = 4A661B0B1A7433B40022CC69 /* tessdata */; };
+		4AAC7D701A76A74700C79913 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AAC7D6F1A76A74700C79913 /* CoreText.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		4A36347F1A74663F00CF7D75 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4A661B001A742F470022CC69 /* Include Private Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				4A35DD471A761C8400059B4C /* TesseractOCRMac.framework in Include Private Frameworks */,
+			);
+			name = "Include Private Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		4A35DD3C1A75E5F100059B4C /* DropView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropView.swift; sourceTree = "<group>"; };
+		4A35DD451A761C7D00059B4C /* TesseractOCRMac.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TesseractOCRMac.framework; sourceTree = "<group>"; };
+		4A4205681A7ED5A80009B7D8 /* ElucidatePDFManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElucidatePDFManager.swift; sourceTree = "<group>"; };
+		4A46CF9E1A887D2B00E0BDF2 /* Elucidate.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Elucidate.icns; sourceTree = "<group>"; };
+		4A51B4FA1A745407002A6D16 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Elucidate/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
+		4A661AD61A742E1B0022CC69 /* Elucidate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Elucidate.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A661ADA1A742E1B0022CC69 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4A661ADD1A742E1B0022CC69 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4A661ADF1A742E1B0022CC69 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		4A661AE21A742E1C0022CC69 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4A661AFA1A742E4C0022CC69 /* libstdc++.6.0.9.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.6.0.9.dylib"; path = "usr/lib/libstdc++.6.0.9.dylib"; sourceTree = SDKROOT; };
+		4A661AFC1A742E540022CC69 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		4A661B021A742F790022CC69 /* bridging-header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "bridging-header.h"; sourceTree = "<group>"; };
+		4A661B0B1A7433B40022CC69 /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; path = tessdata; sourceTree = "<group>"; };
+		4AAC7D6F1A76A74700C79913 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4A661AD31A742E1B0022CC69 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4AAC7D701A76A74700C79913 /* CoreText.framework in Frameworks */,
+				4A661AFD1A742E540022CC69 /* QuartzCore.framework in Frameworks */,
+				4A661AFB1A742E4C0022CC69 /* libstdc++.6.0.9.dylib in Frameworks */,
+				4A35DD461A761C7D00059B4C /* TesseractOCRMac.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4A661ACD1A742E1B0022CC69 = {
+			isa = PBXGroup;
+			children = (
+				4AAC7D6F1A76A74700C79913 /* CoreText.framework */,
+				4A661AFC1A742E540022CC69 /* QuartzCore.framework */,
+				4A661AFA1A742E4C0022CC69 /* libstdc++.6.0.9.dylib */,
+				4A661AD81A742E1B0022CC69 /* Elucidate */,
+				4A661AD71A742E1B0022CC69 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4A661AD71A742E1B0022CC69 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4A661AD61A742E1B0022CC69 /* Elucidate.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4A661AD81A742E1B0022CC69 /* Elucidate */ = {
+			isa = PBXGroup;
+			children = (
+				4A46CF9E1A887D2B00E0BDF2 /* Elucidate.icns */,
+				4A661B0B1A7433B40022CC69 /* tessdata */,
+				4A51B4FA1A745407002A6D16 /* AppDelegate.swift */,
+				4A661ADD1A742E1B0022CC69 /* ViewController.swift */,
+				4A4205681A7ED5A80009B7D8 /* ElucidatePDFManager.swift */,
+				4A35DD3C1A75E5F100059B4C /* DropView.swift */,
+				4A661ADF1A742E1B0022CC69 /* Images.xcassets */,
+				4A661AE11A742E1C0022CC69 /* Main.storyboard */,
+				4A661AD91A742E1B0022CC69 /* Supporting Files */,
+			);
+			path = Elucidate;
+			sourceTree = "<group>";
+		};
+		4A661AD91A742E1B0022CC69 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4A35DD451A761C7D00059B4C /* TesseractOCRMac.framework */,
+				4A661ADA1A742E1B0022CC69 /* Info.plist */,
+				4A661B021A742F790022CC69 /* bridging-header.h */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4A661AD51A742E1B0022CC69 /* Elucidate */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4A661AF21A742E1C0022CC69 /* Build configuration list for PBXNativeTarget "Elucidate" */;
+			buildPhases = (
+				4A661AD21A742E1B0022CC69 /* Sources */,
+				4A661AD31A742E1B0022CC69 /* Frameworks */,
+				4A661AD41A742E1B0022CC69 /* Resources */,
+				4A661B001A742F470022CC69 /* Include Private Frameworks */,
+				4A36347F1A74663F00CF7D75 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Elucidate;
+			productName = TesseMac;
+			productReference = 4A661AD61A742E1B0022CC69 /* Elucidate.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4A661ACE1A742E1B0022CC69 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0620;
+				ORGANIZATIONNAME = "Harry Shamansky";
+				TargetAttributes = {
+					4A661AD51A742E1B0022CC69 = {
+						CreatedOnToolsVersion = 6.2;
+					};
+				};
+			};
+			buildConfigurationList = 4A661AD11A742E1B0022CC69 /* Build configuration list for PBXProject "Elucidate" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4A661ACD1A742E1B0022CC69;
+			productRefGroup = 4A661AD71A742E1B0022CC69 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4A661AD51A742E1B0022CC69 /* Elucidate */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4A661AD41A742E1B0022CC69 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A661AE01A742E1B0022CC69 /* Images.xcassets in Resources */,
+				4A46CF9F1A887D2B00E0BDF2 /* Elucidate.icns in Resources */,
+				4A661AE31A742E1C0022CC69 /* Main.storyboard in Resources */,
+				4A661B0C1A7433B40022CC69 /* tessdata in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4A661AD21A742E1B0022CC69 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A51B4FB1A745407002A6D16 /* AppDelegate.swift in Sources */,
+				4A4205691A7ED5A80009B7D8 /* ElucidatePDFManager.swift in Sources */,
+				4A661ADE1A742E1B0022CC69 /* ViewController.swift in Sources */,
+				4A35DD3D1A75E5F100059B4C /* DropView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		4A661AE11A742E1C0022CC69 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4A661AE21A742E1C0022CC69 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4A661AF01A742E1C0022CC69 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "compiler-default";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-lstdc++";
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		4A661AF11A742E1C0022CC69 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "compiler-default";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "-lstdc++";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		4A661AF31A742E1C0022CC69 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Elucidate",
+				);
+				INFOPLIST_FILE = Elucidate/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_NAME = Elucidate;
+				SWIFT_OBJC_BRIDGING_HEADER = "Elucidate/bridging-header.h";
+			};
+			name = Debug;
+		};
+		4A661AF41A742E1C0022CC69 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Elucidate",
+				);
+				INFOPLIST_FILE = Elucidate/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_NAME = Elucidate;
+				SWIFT_OBJC_BRIDGING_HEADER = "Elucidate/bridging-header.h";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4A661AD11A742E1B0022CC69 /* Build configuration list for PBXProject "Elucidate" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4A661AF01A742E1C0022CC69 /* Debug */,
+				4A661AF11A742E1C0022CC69 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4A661AF21A742E1C0022CC69 /* Build configuration list for PBXNativeTarget "Elucidate" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4A661AF31A742E1C0022CC69 /* Debug */,
+				4A661AF41A742E1C0022CC69 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4A661ACE1A742E1B0022CC69 /* Project object */;
+}
