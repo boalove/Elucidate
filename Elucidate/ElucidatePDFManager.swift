@@ -45,10 +45,10 @@ class ElucidatePDFManager: NSObject, TesseractDelegate {
                 }
                 
                 // find the maximum height font that we can accomodate in the bounding box
-                let frameRect = line["boundingbox"] as NSValue
+                let frameRect = line["boundingbox"] as! NSValue
                 var fontSize = 11.0
                 if skew == 0.0 || adjustTilt {
-                    fontSize = fontSizeForBoundingHeight(Double((frameRect.rectValue).size.height) / 2, startingFontName: "Times New Roman", startingFontSize: 11.0, text: line["text"] as String)
+                    fontSize = fontSizeForBoundingHeight(Double((frameRect.rectValue).size.height) / 2, startingFontName: "Times New Roman", startingFontSize: 11.0, text: line["text"] as! String)
                 }
                 
                 
@@ -56,13 +56,13 @@ class ElucidatePDFManager: NSObject, TesseractDelegate {
                 var font: CTFont = CTFontCreateWithName("Times New Roman", CGFloat(fontSize), nil)
                 // Tesseract starts the bounding box at the bottom of the descenders.
                 // CoreText lets the descenders extend below. Offset to account for this.
-                let descenderOffset = (descendersPresent(line["text"] as String)) ? CTFontGetDescent(font) : 0.0
+                let descenderOffset = (descendersPresent(line["text"] as! String)) ? CTFontGetDescent(font) : 0.0
                 let convertedRect = CGRectMake((originalRect.origin.x / 2) + cropRect.origin.x, descenderOffset + (cropRect.size.height - (originalRect.origin.y / 2) - (originalRect.height / 2)) + cropRect.origin.y, (originalRect.width / 2), (originalRect.height / 2))
 
-                let cText = CFAttributedStringCreate(nil, (line["text"] as String) as CFStringRef, nil)
+                let cText = CFAttributedStringCreate(nil, (line["text"] as! String) as CFStringRef, nil)
                 let mutableAttributedString = CFAttributedStringCreateMutableCopy(nil, 0, cText)
-                CFAttributedStringSetAttribute(mutableAttributedString, CFRangeMake(0, countElements(line["text"] as String)), kCTFontAttributeName, font)
-                CFAttributedStringSetAttribute(mutableAttributedString, CFRangeMake(0, CFStringGetLength((line["text"] as String) as CFStringRef)), kCTForegroundColorAttributeName, CGColorCreateGenericRGB(0.0, 0.0, 0.0, 0.0))
+                CFAttributedStringSetAttribute(mutableAttributedString, CFRangeMake(0, count(line["text"] as! String)), kCTFontAttributeName, font)
+                CFAttributedStringSetAttribute(mutableAttributedString, CFRangeMake(0, CFStringGetLength((line["text"] as! String) as CFStringRef)), kCTForegroundColorAttributeName, CGColorCreateGenericRGB(0.0, 0.0, 0.0, 0.0))
                 
                 CGContextSetTextMatrix(pdfContext, CGAffineTransformIdentity)
                 
@@ -160,14 +160,14 @@ class ElucidatePDFManager: NSObject, TesseractDelegate {
             tesseract?.recognize()
             
             // grab the text as lines
-            var textlines = tesseract?.getConfidenceByTextline as [[String : AnyObject]]
+            var textlines = tesseract?.getConfidenceByTextline as! [[String : AnyObject]]
             if let tess = tesseract {
                 skew = tess.getTilt()
             }
             
             // filter out blank lines
             textlines = textlines.filter({
-                ($0["text"] as String).stringByReplacingOccurrencesOfString(" ", withString: "", options: nil, range: nil).stringByReplacingOccurrencesOfString("\n", withString: "", options: nil, range: nil) != "" })
+                ($0["text"] as! String).stringByReplacingOccurrencesOfString(" ", withString: "", options: nil, range: nil).stringByReplacingOccurrencesOfString("\n", withString: "", options: nil, range: nil) != "" })
             
             
             // determine whether or not to split pages
@@ -179,7 +179,7 @@ class ElucidatePDFManager: NSObject, TesseractDelegate {
                     // draw the left page
                     var leftRect = NSRect(x: cropRect.origin.x, y: cropRect.origin.y, width: CGFloat(splitPoint / 2), height: cropRect.height)
                     var leftData = NSData(bytes: &leftRect, length: sizeof(CGRect))
-                    CGPDFContextBeginPage(pdfContext, [(kCGPDFContextCropBox as String) : leftData, (kCGPDFContextMediaBox as String) : mediaData])
+                    CGPDFContextBeginPage(pdfContext, [(kCGPDFContextCropBox as! String) : leftData, (kCGPDFContextMediaBox as! String) : mediaData])
                     if adjustTilt {
                         rotateContext(pdfContext, skew: -1 * skew, cropRect: cropRect)
                         leftLines = adjustBoundingBoxesForSkew(leftLines, skew: skew, cropRect: cropRect)
@@ -196,7 +196,7 @@ class ElucidatePDFManager: NSObject, TesseractDelegate {
                     // draw the right page
                     var rightRect = NSRect(x: cropRect.origin.x + CGFloat(splitPoint / 2), y: cropRect.origin.y, width: cropRect.width - CGFloat(splitPoint / 2), height: cropRect.height)
                     var rightData = NSData(bytes: &rightRect, length: sizeof(CGRect))
-                    CGPDFContextBeginPage(pdfContext, [(kCGPDFContextCropBox as String) : rightData, (kCGPDFContextMediaBox as String) : mediaData])
+                    CGPDFContextBeginPage(pdfContext, [(kCGPDFContextCropBox as! String) : rightData, (kCGPDFContextMediaBox as! String) : mediaData])
                     if adjustTilt {
                         rotateContext(pdfContext, skew: -1 * skew, cropRect: cropRect)
                         rightLines = adjustBoundingBoxesForSkew(rightLines, skew: skew, cropRect: cropRect)
@@ -210,7 +210,7 @@ class ElucidatePDFManager: NSObject, TesseractDelegate {
                     }
                     CGPDFContextEndPage(pdfContext)
                 } else {
-                    CGPDFContextBeginPage(pdfContext, [(kCGPDFContextCropBox as String) : cropData, (kCGPDFContextMediaBox as String) : mediaData])
+                    CGPDFContextBeginPage(pdfContext, [(kCGPDFContextCropBox as! String) : cropData, (kCGPDFContextMediaBox as! String) : mediaData])
                     if adjustTilt {
                         rotateContext(pdfContext, skew: -1 * skew, cropRect: cropRect)
                         textlines = adjustBoundingBoxesForSkew(textlines, skew: skew, cropRect: cropRect)
@@ -226,7 +226,7 @@ class ElucidatePDFManager: NSObject, TesseractDelegate {
                 }
             } else {
                 // draw the full page
-                CGPDFContextBeginPage(pdfContext, [(kCGPDFContextCropBox as String) : cropData, (kCGPDFContextMediaBox as String) : mediaData])
+                CGPDFContextBeginPage(pdfContext, [(kCGPDFContextCropBox as! String) : cropData, (kCGPDFContextMediaBox as! String) : mediaData])
                 if adjustTilt {
                     rotateContext(pdfContext, skew: -1 * skew, cropRect: cropRect)
                     textlines = adjustBoundingBoxesForSkew(textlines, skew: skew, cropRect: cropRect)
@@ -284,7 +284,7 @@ class ElucidatePDFManager: NSObject, TesseractDelegate {
         
         for line in textlines {
             var newLine: [String : AnyObject] = line
-            let lineRect = (line["boundingbox"] as NSValue).rectValue
+            let lineRect = (line["boundingbox"] as! NSValue).rectValue
             
             // set up the triangle for trig
             let height = lineRect.origin.y - (cropRect.origin.y + (cropRect.height / 2))
@@ -373,7 +373,7 @@ class ElucidatePDFManager: NSObject, TesseractDelegate {
         var rightMin: CGFloat = rightCenter
         // place each line on the left or right page
         for line in textlines {
-            let rect = (line["boundingbox"] as NSValue).rectValue
+            let rect = (line["boundingbox"] as! NSValue).rectValue
             if closerToLeft(centerOfBox(rect), leftCenter, rightCenter) {
                 leftLines.append(line)
                 if (rect.origin.x + rect.width) > leftMax {
@@ -400,7 +400,7 @@ class ElucidatePDFManager: NSObject, TesseractDelegate {
             // check that none of the rects cross the split point
             let splitRect = NSRect(x: potentialSplit - 1.0, y: 0.0, width: 2.0, height: reorientedPage.height)
             for line in textlines {
-                let rect = (line["boundingbox"] as NSValue).rectValue
+                let rect = (line["boundingbox"] as! NSValue).rectValue
                 if NSIntersectsRect(rect, splitRect) {
                     NSLog("Failed to split page: Text crossed over potential split point. This could mean that the page need not be split.")
                     return nil

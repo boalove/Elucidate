@@ -59,7 +59,7 @@ class DropView: NSView, NSPasteboardItemDataProvider, NSDraggingDestination {
     override func performDragOperation(sender: NSDraggingInfo) -> Bool {
 
         let pBoard = sender.draggingPasteboard()
-        let URLs = pBoard.readObjectsForClasses([NSURL.self], options: nil) as [NSURL]
+        let URLs = pBoard.readObjectsForClasses([NSURL.self], options: nil) as! [NSURL]
         
         for u in URLs {
             self.delegate?.processFileWithURL(u)
